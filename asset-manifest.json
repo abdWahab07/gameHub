@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/gamesHub/static/css/main.f855e6bc.css",
-    "main.js": "/gamesHub/static/js/main.a3eeaf66.js",
-    "static/js/453.ed3810f9.chunk.js": "/gamesHub/static/js/453.ed3810f9.chunk.js",
-    "static/media/logo.svg": "/gamesHub/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/gamesHub/index.html",
-    "main.f855e6bc.css.map": "/gamesHub/static/css/main.f855e6bc.css.map",
-    "main.a3eeaf66.js.map": "/gamesHub/static/js/main.a3eeaf66.js.map",
-    "453.ed3810f9.chunk.js.map": "/gamesHub/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/gameHub/static/css/main.14b83127.css",
+    "main.js": "/gameHub/static/js/main.ba5cdd5e.js",
+    "static/js/453.ed3810f9.chunk.js": "/gameHub/static/js/453.ed3810f9.chunk.js",
+    "static/media/BebasNeue-Regular.ttf": "/gameHub/static/media/BebasNeue-Regular.12e3683f9192436a7be8.ttf",
+    "static/media/logo.png": "/gameHub/static/media/logo.9572ae9f36a4903173c2.png",
+    "index.html": "/gameHub/index.html",
+    "main.14b83127.css.map": "/gameHub/static/css/main.14b83127.css.map",
+    "main.ba5cdd5e.js.map": "/gameHub/static/js/main.ba5cdd5e.js.map",
+    "453.ed3810f9.chunk.js.map": "/gameHub/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.a3eeaf66.js"
+    "static/css/main.14b83127.css",
+    "static/js/main.ba5cdd5e.js"
   ]
 }
