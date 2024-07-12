@@ -1,9 +1,9 @@
 @font-face {
-    font-family: bebas;
-    src: url(../public/BebasNeue-Regular.ttf);
+  font-family: bebas;
+  src: url(../public/BebasNeue-Regular.ttf);
 }
 
-.bebas{
-    font-family: bebas;
-    font-size: large;
+.bebas {
+  font-family: bebas;
+  font-size: large;
 }

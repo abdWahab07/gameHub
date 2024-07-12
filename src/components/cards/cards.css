@@ -1,0 +1,39 @@
+.card-container {
+    padding: 20px; 
+    overflow-x: hidden;
+    background-color: #393E46;
+}
+  
+  .card {
+    width: 100%;
+    background-color: black;
+  }
+  
+  .card-img-top {
+    height: auto; 
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for both transform and shadow */
+    
+  }
+  
+  .card:hover {
+    transform: scale(0.95); /* Scale down to 95% on hover */
+    box-shadow: 0 6px 15px rgba(255, 0, 0, 0.7); /* Darker red shadow on hover */
+  }
+  .card{
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

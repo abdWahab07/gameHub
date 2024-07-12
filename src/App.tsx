@@ -1,9 +1,12 @@
-
-import './App.css';
-import Navbar from './components/navbar/navbar';
+import "./App.css";
+import Cards from "./components/cards/cards";
+import Navbar from "./components/navbar/navbar";
 function App() {
   return (
-    <Navbar></Navbar>
+    <>    
+      <Navbar></Navbar>
+      <Cards></Cards>
+    </>
   );
 }
 

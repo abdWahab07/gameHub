@@ -20,7 +20,7 @@ const Navbar = () => {
 
         {/* Toggler button for mobile */}
         <button
-          className="navbar-toggler"
+          className="navbar-toggler bg-light"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
