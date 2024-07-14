@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from "react";
 import gamesApi from "../navbar/services/gamesApi";
+import CardIcons from "./crads Icons/cardIcons";
 import "./cards.css";
+
+export interface Platforms{
+  id: string,
+  name: string,
+  slug: string
+}
+
 
 interface Game {
   id: number;
   name: string;
   background_image: string;
+  parent_platforms: {platform: Platforms}[]
 }
 
 interface fetchGames {
@@ -42,7 +51,10 @@ const Cards = () => {
                   alt={game.name}
                 />
                 <div className="card-body">
-                  <h5 className="card-title text-danger">{game.name}</h5>
+                  <h5 className="card-title text-danger text-uppercase fw-bold">{game.name}</h5>
+                </div>
+                <div className="text-white"> 
+                  <CardIcons platform={game.parent_platforms.map(p => p.platform)}></CardIcons>                   
                 </div>
               </div>
             </div>
