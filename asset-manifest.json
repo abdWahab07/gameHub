@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/gameHub/static/css/main.b15e87d4.css",
-    "main.js": "/gameHub/static/js/main.e1916d1e.js",
+    "main.css": "/gameHub/static/css/main.2297c4d5.css",
+    "main.js": "/gameHub/static/js/main.83670cc9.js",
     "static/js/453.ed3810f9.chunk.js": "/gameHub/static/js/453.ed3810f9.chunk.js",
     "static/media/BebasNeue-Regular.ttf": "/gameHub/static/media/BebasNeue-Regular.12e3683f9192436a7be8.ttf",
     "static/media/logo.png": "/gameHub/static/media/logo.9572ae9f36a4903173c2.png",
     "index.html": "/gameHub/index.html",
-    "main.b15e87d4.css.map": "/gameHub/static/css/main.b15e87d4.css.map",
-    "main.e1916d1e.js.map": "/gameHub/static/js/main.e1916d1e.js.map",
+    "main.2297c4d5.css.map": "/gameHub/static/css/main.2297c4d5.css.map",
+    "main.83670cc9.js.map": "/gameHub/static/js/main.83670cc9.js.map",
     "453.ed3810f9.chunk.js.map": "/gameHub/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b15e87d4.css",
-    "static/js/main.e1916d1e.js"
+    "static/css/main.2297c4d5.css",
+    "static/js/main.83670cc9.js"
   ]
 }
