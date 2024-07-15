@@ -2,19 +2,20 @@ import React, { useEffect, useState } from "react";
 import gamesApi from "../navbar/services/gamesApi";
 import CardIcons from "./crads Icons/cardIcons";
 import "./cards.css";
+import Bagdes from "./badges";
 
-export interface Platforms{
-  id: string,
-  name: string,
-  slug: string
+export interface Platforms {
+  id: string;
+  name: string;
+  slug: string;
 }
-
 
 interface Game {
   id: number;
   name: string;
   background_image: string;
-  parent_platforms: {platform: Platforms}[]
+  parent_platforms: { platform: Platforms }[];
+  metacritic: number;
 }
 
 interface fetchGames {
@@ -44,17 +45,26 @@ const Cards = () => {
         {games.length > 0 ? (
           games.map((game) => (
             <div className="col" key={game.id}>
-              <div className="card">
+              <div className="card" >
                 <img
                   src={game.background_image}
                   className="card-img-top"
                   alt={game.name}
                 />
                 <div className="card-body">
-                  <h5 className="card-title text-danger text-uppercase fw-bold">{game.name}</h5>
+                  <h5 className="card-title text-danger text-uppercase fw-bold">
+                    {game.name}
+                  </h5>
                 </div>
-                <div className="text-white"> 
-                  <CardIcons platform={game.parent_platforms.map(p => p.platform)}></CardIcons>                   
+                <div className="d-flex justify-content-between m-3">
+                  <div className="text-white">
+                    <CardIcons
+                      platform={game.parent_platforms.map((p) => p.platform)}
+                    ></CardIcons>
+                  </div>
+                  <div>
+                    <Bagdes score={game.metacritic}></Bagdes>
+                  </div>
                 </div>
               </div>
             </div>
