@@ -5,7 +5,7 @@ const LoadingSkeleton = () => {
     <div
       className="card skeleton"
       aria-hidden="true"
-      style={{ width: "30rem", height: "20rem" }}
+      style={{ width: "28rem", height: "20rem" }}
     >
       <div className="card-body">
         <h5 className="card-title placeholder-glow">

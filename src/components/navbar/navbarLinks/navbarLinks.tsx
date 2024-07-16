@@ -1,24 +1,55 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./navbarLinks.css";
-import Catalogue from "../catalogue";
+import Catalogue from "../catalogue"; // Ensure this path is correct
 
 const NavbarLinks = () => {
   const [showLinks, setShowLinks] = useState(false);
+  const location = useLocation();
+  const footerRef = useRef<HTMLDivElement>(null); // Specify the type of the ref
 
   useEffect(() => {
     setShowLinks(true);
   }, []);
 
+  const scrollToFooter = (event: React.MouseEvent) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    if (footerRef.current) {
+      footerRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <ul className={`navbar-nav mb-lg-0 text-center ${showLinks ? "show" : ""}`}>
-      {Catalogue.map((link) => (
+    <>
+      <ul className={`navbar-nav mb-lg-0 text-center ${showLinks ? "show" : ""}`}>
         <li className="nav-item mx-4">
-          <a className="nav-link" href="#">
-            {link.link}
-          </a>
+          <Link className={`nav-link text-uppercase fw-bold ${location.pathname === "/" ? "active" : ""}`} to="/">Home</Link>
         </li>
-      ))}
-    </ul>
+        {Catalogue.map((link, index) => (
+          <li className="nav-item mx-4 text-uppercase fw-bold" key={index}>
+            {link.link === "about us" ? (
+              <Link
+                className={`nav-link ${location.pathname === "/about" ? "text-danger active" : ""}`} // Added 'active' class here
+                to="_blank" // Use '#' to keep it on the same page
+                onClick={scrollToFooter} // Call scrollToFooter on click
+              >
+                About Us
+              </Link>
+            ) : (
+              <Link
+                className={`nav-link ${location.pathname === (link.link === "generation" ? "/generation" : "#") ? "active" : ""}`}
+                to={link.link === "generation" ? "/generation" : "#"}
+              >
+                {link.link}
+              </Link>
+            )}
+          </li>
+        ))}
+      </ul>
+      <footer ref={footerRef}>
+        {/* Footer content goes here */}
+      </footer>
+    </>
   );
 };
 
