@@ -1,0 +1,75 @@
+    .games {
+        padding: 5rem;
+        color: white; /* Default text color */
+    }
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+        padding: 20px;
+        border-radius: 10px; /* Rounded corners for aesthetics */
+    }
+
+    h1 {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Shadow for better text visibility */
+    }
+
+    h6 {
+        margin-top: 1rem; /* Adds spacing above description */
+    }
+
+    .badge {
+        margin-right: 10px; /* Spacing for badges */
+    }
+
+    .text-uppercase {
+        letter-spacing: 1px; /* Adds spacing for uppercase text */
+    }
+
+
+    /* games.css */
+    .games {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+    }
+    
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    
+    .badge {
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    
+    .btn {
+        margin-top: 10px;
+    }
+    
+    @media (max-width: 768px) {
+        .overlay {
+        padding: 5px;
+        }
+        .hstack{
+            flex-direction: column;   
+        }
+        .badge {
+        font-size: 0.8rem;
+        }
+        h1{
+            font-size: large;
+        }
+        h6{
+            font-size: small;
+        }
+    }
+    

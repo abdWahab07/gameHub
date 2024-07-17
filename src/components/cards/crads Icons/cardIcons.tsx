@@ -1,5 +1,5 @@
 import React from "react";
-import { Platforms } from "../cards";
+import { Platforms } from "../cards"; // Adjust the import as necessary
 
 interface Props {
   platform: Platforms[];
@@ -21,7 +21,7 @@ const CardIcons = ({ platform }: Props) => {
 
   return (
     <div>
-      {platform.map((p) => (
+      {platform.map((p: Platforms) => (
         <i key={p.slug} className={icons[p.slug]} style={{ fontSize: '15px', margin: '10px'}}></i>
       ))}
     </div>

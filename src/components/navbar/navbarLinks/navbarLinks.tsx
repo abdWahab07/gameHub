@@ -28,13 +28,14 @@ const NavbarLinks = () => {
         {Catalogue.map((link, index) => (
           <li className="nav-item mx-4 text-uppercase fw-bold" key={index}>
             {link.link === "about us" ? (
-              <Link
-                className={`nav-link ${location.pathname === "/about" ? "text-danger active" : ""}`} // Added 'active' class here
-                to="_blank" // Use '#' to keep it on the same page
-                onClick={scrollToFooter} // Call scrollToFooter on click
+              <a
+                className={`nav-link ${location.pathname === "/about-us" ? "text-danger active" : ""}`}
+                href="/about-us" // Link to the about us page
+                target="#"   // Open in a new tab
+                rel="noopener noreferrer" // Security best practice
               >
                 About Us
-              </Link>
+              </a>
             ) : (
               <Link
                 className={`nav-link ${location.pathname === (link.link === "generation" ? "/generation" : "#") ? "active" : ""}`}

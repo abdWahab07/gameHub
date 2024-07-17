@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import gamesApi from "../navbar/services/gamesApi";
-import CardIcons from "./crads Icons/cardIcons";
+import CardIcons from "./crads Icons/cardIcons"; // Typo in import path
 import "./cards.css";
 import Badges from "./badges";
 import LoadingSkeleton from "./loadingSkeleton";
@@ -11,10 +12,11 @@ export interface Platforms {
   slug: string;
 }
 
-interface Game {
+export interface Game {
   id: number;
   name: string;
   background_image: string;
+  tags: string[],
   parent_platforms: { platform: Platforms }[];
   metacritic: number;
 }
@@ -27,6 +29,7 @@ interface fetchGames {
 const Cards = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [isLoading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchGames = async () => {
@@ -43,6 +46,10 @@ const Cards = () => {
     fetchGames();
   }, []);
 
+  const handleCardClick = (id: number) => {
+    navigate(`/game/${id}`);
+  };
+
   return (
     <div className="card-container">
       <div className="row row-cols-1 row-cols-md-3 g-4">
@@ -54,7 +61,7 @@ const Cards = () => {
           ))
         ) : games.length > 0 ? (
           games.map((game) => (
-            <div className="col" key={game.id}>
+            <div className="col" key={game.id} onClick={() => handleCardClick(game.id)}>
               <div className="card">
                 <img
                   src={game.background_image}

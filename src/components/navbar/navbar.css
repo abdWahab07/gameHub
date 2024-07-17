@@ -1,7 +1,34 @@
-.navbar {
-  background-color: #000000;
-}
-
 .navbar-nav {
   justify-content: center;
+}
+
+.bg {
+  background-size: 350% 350%;
+background-image: linear-gradient(5deg, black 0%, black 25%, black 51%, red 100%);
+  -webkit-animation: AnimateBG 7s ease infinite;
+          animation: AnimateBG 7s ease infinite;
+}
+
+@-webkit-keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

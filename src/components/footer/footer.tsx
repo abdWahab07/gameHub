@@ -23,6 +23,7 @@ const Footer = () => {
   }, []);
 
   return (
+    <div className="bg">
     <div className={`footer bebas ${isVisible ? "fade-in" : ""}`}>
       <FooterHead />
       <div className="container text-center text-md-start mt-5">
@@ -39,6 +40,7 @@ const Footer = () => {
         </div>
       </div>
       <FooterBottom />
+    </div>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import "./footer.css";
 const FooterContacts = () => {
   return (
     <>
-      <h6 className="text-black text-uppercase fw-bold">contacts</h6>
+      <h6 className="text-white text-uppercase fw-bold">contacts</h6>
       <div className="text-danger">
         <p>
           <i style={{ fontSize: "medium" }} className="fas fa-home  mr-5">

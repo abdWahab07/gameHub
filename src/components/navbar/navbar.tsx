@@ -5,7 +5,7 @@ import NavbarLinks from "./navbarLinks/navbarLinks";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bebas">
+    <nav className="navbar navbar-expand-lg navbar-light bebas bg">
       <div className="container-fluid">
         {/* Logo on the left */}
         <a className="navbar-brand" href="#">
