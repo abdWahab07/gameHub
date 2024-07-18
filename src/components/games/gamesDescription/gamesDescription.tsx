@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import LoadingSkeleton from "../../cards/loadingSkeleton";
-import CardIcons from "../../cards/crads Icons/cardIcons"; // Typo in import path
+import CardIcons from "../../cards/crads Icons/cardIcons";
 import "./games.css";
-import { Game } from "../../cards/cards"; // Typo in import path
+import GameDescriptionCardTwo from "../CradTwo/gameDescriptionCradTwo";
 
 interface Platforms {
-  id: string;
+  id: string; // Ensure this matches with CardIcons
   name: string;
   slug: string;
 }
 
 interface GameDetail {
-  id: number;
+  id: string;
   name: string;
   background_image: string;
   rating_top: number;
@@ -32,10 +32,15 @@ const GameDetail = () => {
   const [gameDetail, setGameDetail] = useState<GameDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     const fetchGameDetail = async () => {
+      if (!id) {
+        setError("Game ID is missing.");
+        setLoading(false);
+        return;
+      }
+
       try {
         const response = await fetch(
           `https://api.rawg.io/api/games/${id}?key=f5280fc71d0a444791a6834ce2f76a24`
@@ -68,58 +73,36 @@ const GameDetail = () => {
     return <div>Error: Game details not available.</div>;
   }
 
-  const shortDescription = stripHtmlTags(gameDetail.description).substring(0, 400) + '...';
-
   return (
-    <div
-      className="games d-flex"
-      style={{
-        backgroundImage: `url(${gameDetail.background_image})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: '100vh'
-      }}
-    >
-      <div className="overlay">
-        <div className="hstack gap-3 text-center align-items-center">
-          <div className="p-2">
-            <h5>
-              <span className="badge text-bg-secondary">
-                {new Date(gameDetail.released).toLocaleDateString()}
-              </span>
-            </h5>
-          </div>
-          <div className="p-2">
-            <p className="text-white text-uppercase fw-bold mt-2">
-              Average playtime: {gameDetail.playtime} hours
-            </p>
-          </div>
-          <div className="p-2">
-            <CardIcons
-              platform={gameDetail.parent_platforms.map((p) => p.platform)}
-            />
-          </div>
+    <>
+      <div
+        className="games d-flex"
+        style={{
+          backgroundImage: `url(${gameDetail.background_image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "100vh",
+        }}
+      >
+        <div className="overlay">
+          <h1 className="display-1 fw-bold text-white">{gameDetail.name}</h1>
+          <h6>{stripHtmlTags(gameDetail.description)}</h6>
+          <CardIcons
+            platform={gameDetail.parent_platforms.map((p) => p.platform)}
+          />
         </div>
-
-        <h1 className="display-1 fw-bold text-white">{gameDetail.name}</h1>
-        <h6>
-          <span className="badge text-bg-success">
-            TOP RANKING: {gameDetail.rating_top}
-          </span>
-        </h6>
-        <h3 className="fw-bold">About</h3>
-        <h6 className="text-white fw-bold">
-          {isExpanded ? stripHtmlTags(gameDetail.description) : shortDescription}
-        </h6>
-        <button 
-          className="btn btn-light mt-2"
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          {isExpanded ? "Read Less" : "Read More"}
-        </button>
-
       </div>
-    </div>
+      {id && <GameDescriptionCardTwo gameId={parseInt(id)} />}{" "}
+      {/* Convert id to number */}
+      <div className="card pd-3">
+        <h1>
+          testing mode checking the previos version
+        </h1>
+        {/* <d-flex> className="justify-content-justify">
+          <h2></h2>
+        </d-flex> */}
+      </div>
+    </>
   );
 };
 

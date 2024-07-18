@@ -1,9 +1,11 @@
 import React from "react";
 import { Platforms } from "../cards"; // Adjust the import as necessary
 
+
 interface Props {
   platform: Platforms[];
 }
+
 
 const CardIcons = ({ platform }: Props) => {
   const icons: { [key: string]: string } = {
@@ -24,6 +26,7 @@ const CardIcons = ({ platform }: Props) => {
       {platform.map((p: Platforms) => (
         <i key={p.slug} className={icons[p.slug]} style={{ fontSize: '15px', margin: '10px'}}></i>
       ))}
+
     </div>
   );
 };
